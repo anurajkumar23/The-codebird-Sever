@@ -11,7 +11,7 @@ const jwt = require("jsonwebtoken");
 
 
 
-
+const ServerUrl = import.meta.env.SERVER_URL;
 const instance = new Razorpay({
   key_id: "rzp_test_8oySKX9rIGczSe",
   key_secret: "NIS5Vjt76v707Rkvr2w8MMhQ",
@@ -67,7 +67,7 @@ const paymentDone = async (req, res) => {
       );
       await payment.save();
       res.redirect(
-        `http://localhost:5173/paymentdone?reference=${razorpay_payment_id}`
+        `${ServerUrl}/paymentdone?reference=${razorpay_payment_id}`
       );
     } catch (error) {
       res.status(400).json({

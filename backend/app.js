@@ -9,9 +9,9 @@ dotenv.config();
 const PORT = process.env.PORT || 9000; 
 require('./database/connectDatabase')
 
-
+const ServerUrl = import.meta.env.SERVER_URL;
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: `${ServerUrl}`,
   credentials: true,
 };
 app.use(cors(corsOptions));

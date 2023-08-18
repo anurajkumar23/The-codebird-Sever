@@ -67,7 +67,7 @@ const paymentDone = async (req, res) => {
       );
       await payment.save();
       res.redirect(
-        `https://the-code-bird-website.vercel.app/paymentdone?reference=${razorpay_payment_id}`
+        `${process.env.FRONTEND_URL}/paymentdone?reference=${razorpay_payment_id}`
       );
     } catch (error) {
       res.status(400).json({

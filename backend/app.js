@@ -11,7 +11,7 @@ require('./database/connectDatabase');
 
 const allowedOrigins = [
   `${process.env.FRONTEND_URL}`, 
-  'https://the-code-bird-website.vercel.app', 
+  'http://localhost:5173', 
 ];
 
 const corsOptions = {

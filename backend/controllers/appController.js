@@ -67,7 +67,7 @@ const paymentDone = async (req, res) => {
       );
       await payment.save();
       res.redirect(
-        `http://localhost:5173/paymentdone?reference=${razorpay_payment_id}`
+        `${process.env.FRONTEND_URL}/paymentdone?reference=${razorpay_payment_id}`
       );
     } catch (error) {
       res.status(400).json({
